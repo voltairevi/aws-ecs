@@ -1,0 +1,16 @@
+# This image is used to spin up an Amazon ECS instance
+
+FROM debian:stable
+
+RUN apt-get update \
+    && apt-get -y upgrade \
+    && apt-get install -y curl \
+        python3-pip
+        
+RUN apt-get update \
+    && pip3 install awscli --upgrade
+
+RUN aws --version
+
+#RUN aws cli 
+
